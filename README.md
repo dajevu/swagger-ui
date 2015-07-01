@@ -1,3 +1,18 @@
+## HIRERIGHT WEBCOURT UPDATES/NOTES
+
+When using Boot2Docker locallly, perform the following to launch:
+
+   a. Edit the file dist/index.html. Look for JS resembling:
+
+   	url = "http://192.168.59.103:8080/webcourt.json"; 
+
+   	Make sure that IP address is the one in which it will be serving under
+
+   b. Build docker with "docker build -t swagger-ui-builder ."
+   c. Run with: "docker run -p 8080:8080 swagger-ui-builder".
+   d. Access locally on mac using your Boot2Docker IP address with port 8080, ex. "http://192.168.59.103:8080/"
+
+
 # Swagger UI
 
 [![Build Status](https://travis-ci.org/swagger-api/swagger-ui.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-ui)
