@@ -29,11 +29,12 @@
         //url = "http://petstore.swagger.io/v2/swagger.json";
         //url = "http://localhost:8080/dist/petstore.json";
         //url = "http://localhost:8080/dist/webcourt.json";
-        url = "http://192.168.59.103:8080/webcourt.json";
+        url = "http://api.hireright.us:80/webcourt.json";
       }
       window.swaggerUi = new SwaggerUi({
         url: url,
         dom_id: "swagger-ui-container",
+	validatorUrl: null,
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){
           if(typeof initOAuth == "function") {
