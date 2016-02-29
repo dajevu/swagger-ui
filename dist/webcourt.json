@@ -231,7 +231,7 @@
                 }
             }
         },
-         "/service/requests/{requestId}/cases/{caseid}/counts": {
+        "/service/requests/{requestId}/cases/{caseid}/counts": {
             "put": {
                 "tags": ["counts"],
                 "description": "Submit Individual Case. You can submit a case without a corresponding count if you wish to add the count later.",
@@ -381,12 +381,16 @@
                 "items": {"$ref": "person"}
             },
             "offence": {
-                "type": "array",
-                "items": {"$ref": "offence"}
+                "offence": {"type": "string"},
+                "date": {"type": "date"},
+                "plaintiff": {"type": "string"},
+                "type": {"type": "string"},
+                "type_modifier": {"type": "string"}
             },
             "disposition": {
-                "type": "array",
-                "items": {"$ref": "disposition"}
+                "disposition": {"type": "string"},
+                "pending": {"type": "boolean"},
+                "date": {"type": "date"}
             }
         }},
         "person": {"properties": {
@@ -398,50 +402,46 @@
             "type": "array",
             "items": {"$ref": "id"}
         },
-        "offence": {"properties": {
-            "offence": {"type": "string"},
-            "date": {"type": "date"},
-            "plaintiff": {"type": "string"},
-            "type": {"type": "string"},
-            "type_modifier": {"type": "string"}
-        }},
-        "disposition": {"properties": {
-            "disposition": {"type": "string"},
-            "pending": {"type": "boolean"},
-            "date": {"type": "date"}
-        }},
         "asrc": {"properties": {
             "id": {"type": "integer"},
             "reason": {"type": "string"}
         }},
         "verification": {
             "required": true,
-            "default": "Array of: SSN | DATE_OF_BIRTH | NAME | OTHER"
+            "default": "Array of: SOCIAL_SECURITY_NUMBER | DATE_OF_BIRTH | NAME | OTHER"
         },
         "id": {"properties": {"id": {"type": "integer"}}},
         "counts": {"properties": {
             "offence": {
-                "type": "array",
-                "items": {"$ref": "offence"}
+                "offence": {"type": "string"},
+                "date": {"type": "date"},
+                "plaintiff": {"type": "string"},
+                "type": {"type": "string"},
+                "type_modifier": {"type": "string"}
             },
             "disposition": {
-                "type": "array",
-                "items": {"$ref": "disposition"}
+                "disposition": {"type": "string"},
+                "pending": {"type": "boolean"},
+                "date": {"type": "date"}
             },
             "sentence": {"type": "string"}
         }},
         "count": {"properties": {
             "id": {"type": "integer"},
             "offence": {
-                "type": "array",
-                "items": {"$ref": "offence"}
+                "offence": {"type": "string"},
+                "date": {"type": "date"},
+                "plaintiff": {"type": "string"},
+                "type": {"type": "string"},
+                "type_modifier": {"type": "string"}
             },
             "disposition": {
-                "type": "array",
-                "items": {"$ref": "disposition"}
+                "disposition": {"type": "string"},
+                "pending": {"type": "boolean"},
+                "date": {"type": "date"}
             },
             "sentence": {"type": "string"}
-        }},        
+        }},
         "cases": {"properties": {
             "number": {"type": "integer"},
             "verifications": {
