@@ -412,34 +412,34 @@
         },
         "id": {"properties": {"id": {"type": "integer"}}},
         "counts": {"properties": {
-            "offence": {
+            "offence": {"properties": {
                 "offence": {"type": "string"},
                 "date": {"type": "date"},
                 "plaintiff": {"type": "string"},
                 "type": {"type": "string"},
                 "type_modifier": {"type": "string"}
-            },
-            "disposition": {
+            }},
+            "disposition": {"properties": {
                 "disposition": {"type": "string"},
                 "pending": {"type": "boolean"},
                 "date": {"type": "date"}
-            },
+            }},
             "sentence": {"type": "string"}
         }},
         "count": {"properties": {
             "id": {"type": "integer"},
-            "offence": {
+            "offence": {"properties": {
                 "offence": {"type": "string"},
                 "date": {"type": "date"},
                 "plaintiff": {"type": "string"},
                 "type": {"type": "string"},
                 "type_modifier": {"type": "string"}
-            },
-            "disposition": {
+            }},
+            "disposition": {"properties": {
                 "disposition": {"type": "string"},
                 "pending": {"type": "boolean"},
                 "date": {"type": "date"}
-            },
+            }},
             "sentence": {"type": "string"}
         }},
         "cases": {"properties": {
